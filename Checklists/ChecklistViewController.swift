@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
     var items: [ChecklistItem]
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,18 +40,6 @@ class ChecklistViewController: UITableViewController {
         items.append(row4item)
         
         super.init(coder: aDecoder)
-    }
-    @IBAction func addItem() {
-        let newIndexRow = items.count
-        let item = ChecklistItem()
-        item.text = "I'm a new row"
-        item.checked = false
-        items.append(item)
-        
-        let indexPath = NSIndexPath(forRow: newIndexRow, inSection: 0)
-        let indexPaths = [indexPath]
-        
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
     }
     
     override func viewDidLoad() {
@@ -112,7 +100,29 @@ class ChecklistViewController: UITableViewController {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
     }
-
+    
+    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+        let indexPaths = [indexPath]
+        
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddItem" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! AddItemViewController
+            
+            controller.delegate = self
+        }
+    }
 
 }
 

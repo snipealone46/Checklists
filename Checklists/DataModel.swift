@@ -10,9 +10,26 @@ import Foundation
 
 class DataModel {
     var lists = [Checklist]()
+    var indexOfSelectedChecklist: Int {
+        get{
+            return NSUserDefaults.standardUserDefaults().integerForKey("ChecklistIndex")
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: "ChecklistIndex")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
     init() {
         loadChecklists()
+        registerDefaults()
     }
+    
+    func registerDefaults() {
+        let dictionary = ["ChecklistIndex": -1]
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)
+    }
+    
     func documentDirectory() ->String{
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         return paths[0]

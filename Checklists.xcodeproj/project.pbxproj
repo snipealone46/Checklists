@@ -68,16 +68,16 @@
 			children = (
 				0786A3AD1BF0375E0076D8F9 /* AppDelegate.swift */,
 				0786A3AF1BF0375E0076D8F9 /* ChecklistViewController.swift */,
+				0727BE7D1BF30F4E0001DB91 /* ItemDetailViewController.swift */,
 				0727BE811BF723A30001DB91 /* AllListsViewController.swift */,
 				0786A3B11BF0375E0076D8F9 /* Main.storyboard */,
 				0786A3B41BF0375E0076D8F9 /* Assets.xcassets */,
 				0786A3B91BF0375E0076D8F9 /* Info.plist */,
-				072A9C691BF28A970069F35C /* ChecklistItem.swift */,
-				0727BE7D1BF30F4E0001DB91 /* ItemDetailViewController.swift */,
 				0727BE831BF726D40001DB91 /* Checklist.swift */,
+				0727BE891BFAD2FD0001DB91 /* IconPickerViewController.swift */,
+				072A9C691BF28A970069F35C /* ChecklistItem.swift */,
 				0727BE871BF859860001DB91 /* ListDetailViewController.swift */,
 				074F19C81BF95568005181E1 /* DataModel.swift */,
-				0727BE891BFAD2FD0001DB91 /* IconPickerViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";

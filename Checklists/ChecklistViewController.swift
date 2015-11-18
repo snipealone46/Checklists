@@ -76,7 +76,13 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     func configureTextForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
         
         let label = cell.viewWithTag(1000) as! UILabel
+        let subtitle = cell.viewWithTag(1002) as! UILabel
         label.text = item.text
+        if item.shouldRemind {
+        subtitle.text = ChecklistItem.updateDueDateLabel(item.dueDate)
+        } else {
+            subtitle.text = ""
+        }
         label.textColor = view.tintColor
     }
     

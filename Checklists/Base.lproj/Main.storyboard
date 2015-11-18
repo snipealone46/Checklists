@@ -52,13 +52,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="533" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-qR-iuH">
-                                            <rect key="frame" x="38" y="11.5" width="495" height="20.5"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="690-ze-5s0">
                                             <rect key="frame" x="16" y="5" width="15" height="24.5"/>
                                             <animations/>
@@ -66,13 +59,36 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQm-6l-df8">
+                                            <rect key="frame" x="38" y="28" width="487" height="14.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-qR-iuH">
+                                            <rect key="frame" x="38" y="7" width="487" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="qfs-qR-iuH" secondAttribute="trailing" id="Owx-yz-syP"/>
-                                        <constraint firstItem="qfs-qR-iuH" firstAttribute="leading" secondItem="yy2-kv-aiH" secondAttribute="leadingMargin" constant="30" id="T1h-8y-fLs"/>
-                                        <constraint firstItem="qfs-qR-iuH" firstAttribute="centerY" secondItem="yy2-kv-aiH" secondAttribute="centerY" id="cgN-qF-xgX"/>
+                                        <constraint firstAttribute="bottom" secondItem="OQm-6l-df8" secondAttribute="bottom" constant="0.5" id="HkR-Rm-XXP"/>
+                                        <constraint firstItem="OQm-6l-df8" firstAttribute="leading" secondItem="yy2-kv-aiH" secondAttribute="leadingMargin" constant="30" id="Zl0-1x-Iyf"/>
+                                        <constraint firstAttribute="trailing" secondItem="OQm-6l-df8" secondAttribute="trailing" constant="8" id="aLm-vW-PbL"/>
+                                        <constraint firstItem="qfs-qR-iuH" firstAttribute="top" secondItem="yy2-kv-aiH" secondAttribute="top" constant="7" id="mdy-D0-jCy"/>
+                                        <constraint firstAttribute="trailing" secondItem="qfs-qR-iuH" secondAttribute="trailing" constant="8" id="pCm-OB-b0H"/>
+                                        <constraint firstItem="qfs-qR-iuH" firstAttribute="leading" secondItem="yy2-kv-aiH" secondAttribute="leadingMargin" constant="30" id="qAc-7p-Fnx"/>
+                                        <constraint firstItem="qfs-qR-iuH" firstAttribute="top" secondItem="yy2-kv-aiH" secondAttribute="top" id="wED-cA-gMS"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="wED-cA-gMS"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>

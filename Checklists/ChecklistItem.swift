@@ -66,6 +66,13 @@ class ChecklistItem: NSObject, NSCoding {
         }
     }
     
+    class func updateDueDateLabel(dueDate: NSDate) -> String{
+        let formatter = NSDateFormatter() //convert NSDate to text. NSDateFormatter() makes sure look good to user no matter where she is on the globe
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
+        return formatter.stringFromDate(dueDate)
+    }
+    
     func notificationForThisItem() -> UILocalNotification? {
         let allNotifications = UIApplication.sharedApplication().scheduledLocalNotifications!
         

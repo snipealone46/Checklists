@@ -119,10 +119,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
         hideDatePicker()
     }
     func updateDueDateLabel() {
-        let formatter = NSDateFormatter() //convert NSDate to text. NSDateFormatter() makes sure look good to user no matter where she is on the globe
-        formatter.dateStyle = .MediumStyle
-        formatter.timeStyle = .ShortStyle
-        dueDateLabel.text = formatter.stringFromDate(dueDate)
+        
+        dueDateLabel.text = ChecklistItem.updateDueDateLabel(dueDate)
     }
     
     func showDatePicker() {

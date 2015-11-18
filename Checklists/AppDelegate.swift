@@ -22,20 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //ask for notification permission
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        //test the alarm notification
-        let date = NSDate(timeIntervalSinceNow: 10)
-        let localNotification = UILocalNotification()
-        localNotification.fireDate = date
-        localNotification.timeZone = NSTimeZone.defaultTimeZone()
-        localNotification.alertBody = "I am a local notification"
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         return true
     }
     
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        print("didReceivedLocalNotification \(notification)")
-    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

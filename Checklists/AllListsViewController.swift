@@ -12,7 +12,6 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     
     var dataModel: DataModel!
     override func viewDidLoad() {
-        print(dataModel.dataFilePath())
         super.viewDidLoad()
     }
     override func viewDidAppear(animated: Bool) {

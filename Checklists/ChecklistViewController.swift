@@ -43,7 +43,11 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             
             let item = checklist.items[indexPath.row]
             item.toggleChecked()
-            
+            if item.checked {
+                item.cancelNotification()
+            } else {
+                item.scheduleNotification()
+            }
             configureCheckmarkForCell(cell, withChecklistItem: item)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -72,8 +76,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     func configureTextForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
         
         let label = cell.viewWithTag(1000) as! UILabel
-//        label.text = item.text
-        label.text = "\(item.itemID): \(item.text)"
+        label.text = item.text
         label.textColor = view.tintColor
     }
     

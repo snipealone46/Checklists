@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7P2-NU-Uny">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7P2-NU-Uny">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -324,6 +324,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Pe-hU-TLH">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
                                                     <animations/>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="pwe-6a-P7i" eventType="valueChanged" id="pvE-5X-mJH"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPa-nB-3I3">
                                                     <rect key="frame" x="14" y="7" width="84" height="27.5"/>
@@ -394,7 +397,7 @@
                         <outlet property="datePickerCell" destination="Ydq-mL-jkg" id="pSS-3F-TVu"/>
                         <outlet property="doneBarButton" destination="1B4-OC-pfr" id="M1J-pW-xGO"/>
                         <outlet property="dueDateLabel" destination="HKS-yC-UNp" id="FQn-XD-wtW"/>
-                        <outlet property="shouldRemindSwitch" destination="6Pe-hU-TLH" id="tfb-nc-cLC"/>
+                        <outlet property="shouldRemindSwitch" destination="6Pe-hU-TLH" id="NH9-BZ-gx4"/>
                         <outlet property="textField" destination="d7u-Nx-6ip" id="cAM-gx-qmQ"/>
                     </connections>
                 </tableViewController>

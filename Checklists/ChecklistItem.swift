@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ChecklistItem: NSObject, NSCoding {
     var text: String
@@ -44,5 +45,45 @@ class ChecklistItem: NSObject, NSCoding {
     
     func toggleChecked() {
         checked = !checked
+    }
+    
+    func scheduleNotification() {
+        let existingNotification = notificationForThisItem()
+        if let notification = existingNotification {
+            UIApplication.sharedApplication().cancelLocalNotification(notification)
+        }
+        //.compare(NSDate()) will return .OrderedAscending (dueDate in the past)
+        //.OrderedSame (same)
+        //.OrderedDescending (dueDate in the future)
+        if shouldRemind && dueDate.compare(NSDate()) != .OrderedAscending {
+            let localNotification = UILocalNotification()
+            localNotification.fireDate = dueDate
+            localNotification.alertBody = text
+            localNotification.soundName = UILocalNotificationDefaultSoundName
+            localNotification.timeZone = NSTimeZone.defaultTimeZone()
+            localNotification.userInfo = ["ItemID": itemID]
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+    }
+    
+    func notificationForThisItem() -> UILocalNotification? {
+        let allNotifications = UIApplication.sharedApplication().scheduledLocalNotifications!
+        
+        for notification in allNotifications {
+            if let number = notification.userInfo?["ItemID"] as? Int where number == itemID {
+                return notification
+            }
+        }
+        return nil
+    }
+    
+    func cancelNotification() {
+        if let notification = notificationForThisItem() {
+            UIApplication.sharedApplication().cancelLocalNotification(notification)
+        }
+    }
+    
+    deinit {
+        cancelNotification()
     }
 }

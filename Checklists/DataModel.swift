@@ -24,9 +24,7 @@ class DataModel {
         registerDefaults()
         handleFirstTime()
     }
-    func sortChecklists() {
-        lists.sortInPlace({checklist1, checklist2 in return checklist1.name.localizedStandardCompare(checklist2.name) == .OrderedAscending})
-    }
+
     func handleFirstTime() {
         let UserDefaults = NSUserDefaults.standardUserDefaults()
         let firstTime = UserDefaults.boolForKey("FirstTime")
@@ -71,6 +69,11 @@ class DataModel {
             }
         }
     }
+    func sortChecklists() {
+        lists.sortInPlace({checklist1, checklist2 in return checklist1.name.localizedStandardCompare(checklist2.name) == .OrderedAscending})
+    }
+    
+
     
     class func nextChecklistItemID() -> Int {
         let userDefaults = NSUserDefaults.standardUserDefaults()

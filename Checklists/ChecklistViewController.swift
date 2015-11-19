@@ -17,6 +17,10 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         title = checklist.name
         // Do any additional setup after loading the view, typically from a nib.
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,6 +101,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        checklist.sortChecklistItems()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
 
     }
@@ -107,6 +113,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
         configureTextForCell(cell, withChecklistItem: item) }
         }
+        checklist.sortChecklistItems()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
 
     }

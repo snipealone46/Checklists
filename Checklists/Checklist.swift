@@ -39,4 +39,8 @@ class Checklist: NSObject, NSCoding {
         }
         return count
     }
+    
+    func sortChecklistItems() {
+        items.sortInPlace({checklistItem1, checklistItem2 in return checklistItem1.dueDate.compare(checklistItem2.dueDate) == .OrderedAscending})
+    }
 }
